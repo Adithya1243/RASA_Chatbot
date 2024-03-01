@@ -1,0 +1,10 @@
+[
+  {
+    "name": "service",
+    "pattern": "(\\bathletics\\b|\\bsenior\\ center\\b|\\baquatics\\ and\\ fitness\\ center\\b|\\bschool\\ programs\\ and\\ camps\\b|\\bcultural\\ events\\b|\\bfacility\\ rentals\\b)"
+  },
+  {
+    "name": "planning_topic",
+    "pattern": "(\\btransit\\ oriented\\ development\\b|\\baffordable\\ housing\\b|\\bdevelopment\\ information\\b|\\blong\\ range\\ planning\\b|\\bpermits\\ and\\ applications\\b|\\btransportation\\ planning\\b|\\bsmart\\ shuttle\\ maps\\b|\\bunified\\ development\\ ordinance\\b)"
+  }
+]

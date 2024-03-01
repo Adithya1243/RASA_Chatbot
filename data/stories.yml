@@ -1,6 +1,6 @@
 version: "3.1"
 stories:
-  - story: User inquires about employment opportunities
+  - story: greet and inquire about employment opportunities
     steps:
       - intent: greet
       - action: utter_ask_how_can_help
@@ -9,44 +9,37 @@ stories:
       - intent: goodbye
       - action: utter_goodbye
 
-  - story: User inquires about parks and recreation and then asks for specific information
+  - story: user inquires about parks and recreation then asks for specific information
     steps:
       - intent: greet
       - action: utter_ask_how_can_help
       - intent: inquire_parks_recreation
       - action: utter_ask_specific
       - intent: ask_specific_info
+        entities:
+          - service: "athletics"
       - action: action_provide_specific_info_link
       - intent: affirm
-      - action: utter_ask_specific
+      - action: utter_ask_how_can_help
       - intent: ask_specific_info
+        entities:
+          - service: "aquatics"
       - action: action_provide_specific_info_link
       - intent: deny
       - action: utter_goodbye
 
-  - story: general inquiry path
+  - story: general inquiry path with fallback
     steps:
       - intent: greet
       - action: utter_ask_how_can_help
       - intent: affirm
       - action: action_list_services
+      - intent: nlu_fallback
+      - action: utter_fallback
       - intent: inquire_services
       - action: action_list_services
 
-  # Existing stories remain unchanged
-
-  - story: Path back to starting point after general inquiry
-    steps:
-      - intent: greet
-      - action: utter_ask_how_can_help
-      - intent: affirm
-      - action: action_list_services
-      - intent: inquire_employment_opportunities
-      - action: action_provide_employment_link
-      - intent: deny
-      - action: utter_goodbye
-
-  - story: User inquires about Information Technology
+  - story: user inquires about Information Technology
     steps:
       - intent: greet
       - action: utter_ask_how_can_help
@@ -55,73 +48,46 @@ stories:
       - intent: goodbye
       - action: utter_goodbye
 
-  - story: User inquires about Planning
+  - story: user inquires about Planning then asks for specific information
     steps:
       - intent: greet
       - action: utter_ask_how_can_help
       - intent: inquire_planning
       - action: action_ask_planning_specific
       - intent: ask_planning_specific
+        entities:
+          - planning_topic: "affordable housing"
+      - action: action_provide_planning_info_link
+      - intent: affirm
+      - action: utter_ask_how_can_help
+      - intent: ask_planning_specific
+        entities:
+          - planning_topic: "transit oriented development"
       - action: action_provide_planning_info_link
       - intent: deny
       - action: utter_goodbye
 
-  - story: Fallback or misunderstood inquiry
-    steps:
-      - intent: nlu_fallback
-      - action: utter_fallback
-
-  - story: interactive_story_1
+  - story: continuous conversation flow after multiple inquiries
     steps:
       - intent: greet
       - action: utter_ask_how_can_help
-      - intent: inquire_parks_recreation
-      - action: utter_ask_specific
-      - intent: ask_specific_info
-      - action: action_provide_specific_info_link
+      - intent: inquire_information_technology
+      - action: action_provide_it_link
       - intent: affirm
-      - action: utter_ask_specific
-      - intent: ask_specific_info
-      - action: action_provide_specific_info_link
-      - intent: inquire_parks_recreation
       - action: utter_ask_how_can_help
+      - intent: inquire_planning
+      - action: action_ask_planning_specific
+      - intent: ask_planning_specific
+        entities:
+          - planning_topic: "development information"
+      - action: action_provide_planning_info_link
       - intent: affirm
-      - action: action_list_services
-
-  - story: interactive_story_2
-    steps:
-      - intent: greet
       - action: utter_ask_how_can_help
       - intent: inquire_parks_recreation
       - action: utter_ask_specific
       - intent: ask_specific_info
+        entities:
+          - service: "senior center"
       - action: action_provide_specific_info_link
-      - intent: greet
-      - action: utter_ask_how_can_help
-      - intent: greet
-      - action: utter_ask_how_can_help
-      - intent: goodbye
-      - action: utter_goodbye
-      - intent: greet
-      - action: utter_ask_how_can_help
-      - intent: inquire_planning
-      - action: action_ask_planning_specific
-      - intent: ask_planning_specific
-      - action: action_ask_planning_specific
-      - intent: inquire_planning
-      - action: action_provide_planning_info_link
-      - intent: inquire_planning
-      - action: action_ask_planning_specific
-      - intent: ask_planning_specific
-      - intent: ask_planning_specific
-      - action: action_ask_planning_specific
-      - intent: ask_planning_specific
-      - action: action_provide_planning_info_link
-      - intent: greet
-      - action: utter_ask_how_can_help
-      - intent: inquire_planning
-      - action: action_ask_planning_specific
-      - intent: ask_planning_specific
-      - action: action_provide_planning_info_link
-      - intent: goodbye
+      - intent: deny
       - action: utter_goodbye
