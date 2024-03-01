@@ -1,0 +1,79 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hello
+    - Hey
+    - hi
+- intent: inquire_employment_opportunities
+  examples: |
+    - What can you tell me about employment opportunities?
+    - I'm looking for job openings
+    - Are there any employment opportunities?
+- intent: inquire_parks_recreation
+  examples: |
+    - I want to know about Parks, Recreation & Cultural Resources
+    - Tell me about parks and recreation
+    - Information on cultural resources
+    - tell me about parks
+    - tell me about parks and recreation
+- intent: ask_specific_info
+  examples: |
+    - Tell me more about athletics
+    - I want know about senior center
+    - Tell me about senior center
+    - Show me more details about aquatics and fitness center
+    - Tell me more about aquatics
+    - What about school programs and camps?
+    - I’m interested in cultural events
+    - Details on facility rentals
+    - tell me about athletics
+    - tell me about school programs and camps
+- intent: affirm
+  examples: |
+    - Yes
+    - Sure
+    - Yes, please
+    - y
+    - yes
+- intent: deny
+  examples: |
+    - No, that's all
+    - No thanks
+    - That's it
+- intent: goodbye
+  examples: |
+    - Goodbye
+    - Bye
+    - Thanks
+    - bye
+- intent: inquire_services
+  examples: |
+    - Can you tell me more about the services?
+    - What services do you offer?
+    - What can you help me with?
+    - I want to know about the services available.
+- intent: inquire_information_technology
+  examples: |
+    - Tell me about information technology services
+    - Information on IT department
+    - IT services information
+- intent: inquire_planning
+  examples: |
+    - I want to know about planning
+    - Tell me about planning services
+    - Planning department information
+    - i want you to tell me about planning
+    - tell me about planning
+- intent: ask_planning_specific
+  examples: |
+    - Tell me about transit oriented development
+    - Information on affordable housing
+    - Details on development information
+    - What's long range planning
+    - How to get permits and applications
+    - Transportation planning details
+    - Smart shuttle maps info
+    - Unified development ordinance information
+    - tell me about affordable housing

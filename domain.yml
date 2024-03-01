@@ -1,0 +1,35 @@
+version: "3.1"
+intents:
+  - affirm
+  - ask_planning_specific
+  - ask_specific_info
+  - deny
+  - goodbye
+  - greet
+  - inquire_employment_opportunities
+  - inquire_information_technology
+  - inquire_parks_recreation
+  - inquire_planning
+  - inquire_services
+actions:
+  - utter_ask_specific
+  - utter_goodbye
+  - action_provide_planning_info_link
+  - action_provide_specific_info_link
+  - utter_ask_how_can_help
+  - action_ask_planning_specific
+  - action_list_services
+  - action_provide_employment_link
+  - action_provide_it_link
+responses:
+  utter_ask_how_can_help:
+    - text: Hey! How can I help you today? I can provide information about Employment Opportunities, Parks, Recreation & Cultural Resources, Information Technology, and Planning.
+  utter_ask_specific:
+    - text: Sure. Do you want to know anything in specific? I can provide you information for athletics, school programs & camps, aquatics and fitness center, senior center, facility rentals, cultural events.
+  utter_goodbye:
+    - text: Goodbye! If you have any more questions, feel free to ask.
+  utter_fallback:
+    - text: I'm sorry, I didn't quite catch that. Could you please rephrase your question?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
